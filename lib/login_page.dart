@@ -1,6 +1,11 @@
+import 'dart:html';
+import 'dart:ui';
+
 import 'package:aula02/widget/eleveted_button_custom.dart';
 import 'package:aula02/widget/text_form_field_custom.dart';
 import 'package:flutter/material.dart';
+
+enum Genero { Masculino, Feminino }
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key, required this.title});
@@ -13,6 +18,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   bool obscureText = true;
+  Genero genero = Genero.Masculino;
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +68,41 @@ class _LoginPageState extends State<LoginPage> {
                 height: 10,
               ),
               Divider(
-                color: Colors.red,
+                color: Colors.black,
                 height: 100,
                 thickness: 5,
                 indent: 10,
                 endIndent: 10,
               ),
+
+              /*aqui eu fiz a a linha que dividier*/
+
+              Text(
+                "GÊNERO",
+                style: TextStyle(fontSize: 20.0, color: Colors.blue),
+              ),
+
+              /*logo a cima coloquei texto como tamanho e coloração*/
+              Row(
+                children: [
+                  Radio(
+                    value: Genero.Masculino,
+                    groupValue: genero,
+                    onChanged: (Genero) {},
+                  ),
+                ],
+              ),
+              Text("Masculino"),
+              Row(
+                children: [
+                  Radio(
+                    value: Genero.Masculino,
+                    groupValue: genero,
+                    onChanged: (Genero) {},
+                  ),
+                ],
+              ),
+              Text("Feminino"),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
