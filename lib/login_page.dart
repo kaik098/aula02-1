@@ -16,10 +16,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
-    print("BUILD ENTREI");
+    print("REGISTRE-SE");
     return Scaffold(
-      body: Center(
-        child: Padding(
+      body: SizedBox(
+        child: SingleChildScrollView(
           padding: const EdgeInsets.all(48.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -32,10 +32,8 @@ class _LoginPageState extends State<LoginPage> {
                     fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 15),
-              const Text("Faça login para continuar"),
+              const Text("Prencha os dados para se cadastra"),
               const SizedBox(height: 50),
-              const Icon(Icons.account_circle,
-                  size: 100.50, color: Colors.blue),
               const SizedBox(height: 50),
               const SizedBox(
                 height: 25,
@@ -63,6 +61,13 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 10,
               ),
+              Divider(
+                color: Colors.red,
+                height: 100,
+                thickness: 5,
+                indent: 10,
+                endIndent: 10,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: const [
@@ -74,10 +79,10 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 4),
               const ElevetedButtonCustom(description: "Login"),
               const SizedBox(
-                height: 10,
+                height: 4,
               ),
               RichText(
                 textAlign: TextAlign.center,
